@@ -22,7 +22,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showInternalWebPage(){
-        myWebView.loadUrl("https://his.se");
+        myWebView.loadUrl("file:///android_asset/DanielsApp.html");
+
         // TODO: Add your code for showing internal web page here
     }
 
