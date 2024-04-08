@@ -16,6 +16,8 @@ Enable:ade JavaScript execution och att den länkas till webbsettings.
 Skapade en html sida genom att skapa en asset genom "app" och sedan en file döpt "DanielsApp.html"
 La in så att external och internal laddar his.se och även kallat på dom i menyn. Tog tillbaka
 toolbaren för att få alternativet.
+Länkade interna sidan till html sidan som jag skapade. La in en text kod för
+att få något att synas på sidan.
 
 ```
 <resources>
@@ -51,7 +53,7 @@ toolbaren för att få alternativet.
         showExternalWebPage();
         showInternalWebPage();
         
-        
+        myWebView.loadUrl("file:///android_asset/DanielsApp.html");
 ```
 
 Bilder läggs i samma mapp som markdown-filen.
