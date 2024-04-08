@@ -11,7 +11,9 @@ _Du kan ta bort all text som finns sedan tidigare_.
 La till android permission för internet acces i AndroidManifest.xml.
 I activity_main.xml tog jag bort Textview:n som fanns och skapade en WebView samt gav den ett id.
 Gjorde en privat variabel myWebView och med hjälp av void onCreate la jag in
-koden som loadar den till his.se och WebViewClient som gör att vi kan browsa.
+Koden som loadar den till his.se och WebViewClient som gör att vi kan browsa.
+Enable:ade JavaScript execution och att den länkas till webbsettings.
+Skapade en html sida genom att skapa en asset genom "app" och sedan en file döpt "DanielsApp.html"
 
 
 ```
@@ -39,6 +41,11 @@ koden som loadar den till his.se och WebViewClient som gör att vi kan browsa.
         myWebView = findViewById(R.id.my_webview);
         myWebView.setWebViewClient(new WebViewClient()); // Do not open in Chrome!
         myWebView.loadUrl("https://his.se");
+        
+        private WebSettings webSettings;
+        
+                WebSettings webSettings = myWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
 ```
 
 Bilder läggs i samma mapp som markdown-filen.
