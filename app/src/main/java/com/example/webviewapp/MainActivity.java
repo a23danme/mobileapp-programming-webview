@@ -17,10 +17,12 @@ public class MainActivity extends AppCompatActivity {
     private WebSettings webSettings;
 
     public void showExternalWebPage(){
+        myWebView.loadUrl("https://his.se");
         // TODO: Add your code for showing external web page here
     }
 
     public void showInternalWebPage(){
+        myWebView.loadUrl("https://his.se");
         // TODO: Add your code for showing internal web page here
     }
 
@@ -30,10 +32,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         myWebView = findViewById(R.id.my_webview);
         myWebView.setWebViewClient(new WebViewClient()); // Do not open in Chrome!
-        myWebView.loadUrl("https://his.se");
+
 
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
@@ -79,11 +83,13 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_external_web) {
+            showExternalWebPage();
             Log.d("==>","Will display external web page");
             return true;
         }
 
         if (id == R.id.action_internal_web) {
+            showInternalWebPage();
             Log.d("==>","Will display internal web page");
             return true;
         }

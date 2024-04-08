@@ -14,7 +14,8 @@ Gjorde en privat variabel myWebView och med hjälp av void onCreate la jag in
 Koden som loadar den till his.se och WebViewClient som gör att vi kan browsa.
 Enable:ade JavaScript execution och att den länkas till webbsettings.
 Skapade en html sida genom att skapa en asset genom "app" och sedan en file döpt "DanielsApp.html"
-
+La in så att external och internal laddar his.se och även kallat på dom i menyn. Tog tillbaka
+toolbaren för att få alternativet.
 
 ```
 <resources>
@@ -46,6 +47,11 @@ Skapade en html sida genom att skapa en asset genom "app" och sedan en file döp
         
                 WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
+        
+        showExternalWebPage();
+        showInternalWebPage();
+        
+        
 ```
 
 Bilder läggs i samma mapp som markdown-filen.
