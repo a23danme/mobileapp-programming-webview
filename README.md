@@ -10,6 +10,8 @@ _Du kan ta bort all text som finns sedan tidigare_.
 Ändrade namnet på appen genom att ändra "app_name" till Daniels App.
 La till android permission för internet acces i AndroidManifest.xml.
 I activity_main.xml tog jag bort Textview:n som fanns och skapade en WebView samt gav den ett id.
+Gjorde en privat variabel myWebView och med hjälp av void onCreate la jag in
+koden som loadar den till his.se och WebViewClient som gör att vi kan browsa.
 
 
 ```
@@ -26,6 +28,17 @@ I activity_main.xml tog jag bort Textview:n som fanns och skapade en WebView sam
         android:id="@+id/my_webview"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+        
+        private WebView myWebView;
+        
+            @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        myWebView = findViewById(R.id.my_webview);
+        myWebView.setWebViewClient(new WebViewClient()); // Do not open in Chrome!
+        myWebView.loadUrl("https://his.se");
 ```
 
 Bilder läggs i samma mapp som markdown-filen.
